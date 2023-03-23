@@ -1,26 +1,22 @@
-from django_filters import rest_framework as filterbackend
-from django.shortcuts import get_object_or_404
+from api.token import send_email_code
 from django.db.models import Avg
-from rest_framework import viewsets, status, filters
+from django.shortcuts import get_object_or_404
+from django_filters import rest_framework as filterbackend
+from rest_framework import filters, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
-from rest_framework.permissions import (AllowAny, IsAuthenticated)
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
-
 from reviews.models import Category, Genre, Review, Title
 from users.models import User
-from api.token import send_email_code
+
 from .filters import TitleFilter
 from .mixins import CreateListDestroyViewSet
-from .permissions import (
-    IsAdmin,
-    IsAdminOrReadOnly,
-    IsSuperUserIsAdminIsModeratorIsAuthor
-)
-from .serializers import (
-    SignUpSerializer, UsersSerializer, UserIsMeSerializer,
-    CategorySerializer, CommentSerializer, GenreSerializer,
-    ReviewSerializer, TitleSerializer, TitleGETSerializer
-)
+from .permissions import (IsAdmin, IsAdminOrReadOnly,
+                          IsSuperUserIsAdminIsModeratorIsAuthor)
+from .serializers import (CategorySerializer, CommentSerializer,
+                          GenreSerializer, ReviewSerializer, SignUpSerializer,
+                          TitleGETSerializer, TitleSerializer,
+                          UserIsMeSerializer, UsersSerializer)
 
 
 @api_view(['POST'])
