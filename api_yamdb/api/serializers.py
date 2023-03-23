@@ -1,10 +1,10 @@
-from django.shortcuts import get_object_or_404
 from django.contrib.auth.tokens import default_token_generator
-from rest_framework import serializers, exceptions
+from django.shortcuts import get_object_or_404
+from rest_framework import exceptions, serializers
 from rest_framework_simplejwt.tokens import AccessToken
 
 
-from reviews.models import Category, Comment, Genre, Review, Title
+from reviews.models import Category, Comment, Genre, Title, Review
 from users.models import User
 
 USERNAME_REGEX = r'^(?!me\Z)^[\w.@+-]+\Z'
