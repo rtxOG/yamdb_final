@@ -1,6 +1,6 @@
 # CI и CD проекта api_yamdb.
 
-[![CI/CD api_yamdb](https://github.com/rtxog/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+![CI/CD api_yamdb](https://github.com/rtxog/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 ## Описание
 Настроены для приложения Continuous Integration и Continuous Deployment: автоматический запуск тестов, обновление образов на Docker Hub, автоматический деплой на боевой сервер при пуше в главную ветку main.
