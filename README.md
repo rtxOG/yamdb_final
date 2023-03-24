@@ -1,5 +1,7 @@
 # CI и CD проекта api_yamdb.
 
+https://img.shields.io/github/actions/workflow/status/rtxog/yamdb_final/yamdb_workflow.yml
+
 ## Описание
 Настроены для приложения Continuous Integration и Continuous Deployment: автоматический запуск тестов, обновление образов на Docker Hub, автоматический деплой на боевой сервер при пуше в главную ветку main.
 
@@ -17,5 +19,3 @@
 
 Для Continuous Integration в проекте используется облачный сервис GitHub Actions.
 Для него описана последовательность команд (workflow), которая будет выполняться после события push в репозиторий.
-
-https://github.com/rtxog/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg
