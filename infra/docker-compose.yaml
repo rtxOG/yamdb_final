@@ -12,7 +12,11 @@ services:
     image: rtxog/api_yamdb:latest
     restart: always
     volumes:
-      - static_value:/app/static/
+      - type: volume
+        source: static_value
+        target: /app/static
+        volume:
+          nocopy: false
       - media_value:/app/media/
     depends_on:
       - db
@@ -22,16 +26,16 @@ services:
 
   nginx:
     image: nginx:1.21.3-alpine
-
     ports:
       - "80:80"
-
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-
       - static_value:/var/html/static/
-
       - media_value:/var/html/media/
-
     depends_on:
       - web
+
+volumes:
+  static_value:
+  media_value:
+  postgresql_data:
