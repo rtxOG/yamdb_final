@@ -2,8 +2,7 @@ name: Django-app workflow
 
 on:
   push:
-    branches:
-      - main
+    branches: [master]
 jobs:
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
@@ -59,7 +58,6 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: ${{ github.workflow }} успешно выполнен!
-
 
 on: [push]
 jobs:
