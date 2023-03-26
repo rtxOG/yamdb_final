@@ -59,7 +59,10 @@ jobs:
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: ${{ github.workflow }} успешно выполнен!
 
-  [push]
+on:
+  push:
+    branches-ignore:
+      -master
 jobs:
   tests:
     runs-on: ubuntu-latest
